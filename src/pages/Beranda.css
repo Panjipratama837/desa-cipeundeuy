@@ -1,0 +1,12 @@
+/* media query for desktop */
+@media screen and (min-width: 992px) {
+  .card {
+    width: 18rem;
+  }
+  .carousel-item > picture > img {
+    width: 727px;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+  }
+}

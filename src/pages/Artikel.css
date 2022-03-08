@@ -1,0 +1,15 @@
+.form {
+  position: relative;
+}
+
+.form .bi-search {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 5px;
+  left: 15px;
+  color: #9ca3af;
+}
+
+.form-control {
+  text-indent: 33px;
+}

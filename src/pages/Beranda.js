@@ -81,7 +81,7 @@ function Beranda() {
           </div>
 
           <div class="artikel mt-5">
-            <h3>Asu Terkini</h3>
+            <h3>Berita Terkini</h3>
             <hr />
             <div class="row">
               <div class="col-md-4">

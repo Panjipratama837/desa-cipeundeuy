@@ -157,29 +157,29 @@ function Beranda() {
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-end">
                 <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
+                  <Link className="page-link" aria-label="Previous" to={"/"}>
                     <span aria-hidden="true">&laquo;</span>
-                  </a>
+                  </Link>
                 </li>
                 <li class="page-item">
-                  <a class="page-link" href="#">
+                  <Link className="page-link" to={"/"}>
                     1
-                  </a>
+                  </Link>
                 </li>
                 <li class="page-item active">
-                  <a class="page-link" href="#">
+                  <Link className="page-link" to={"/"}>
                     2
-                  </a>
+                  </Link>
                 </li>
                 <li class="page-item">
-                  <a class="page-link" href="#">
+                  <Link className="page-link" to={"/"}>
                     3
-                  </a>
+                  </Link>
                 </li>
                 <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
+                  <Link className="page-link" aria-label="Next" to={"/"}>
                     <span aria-hidden="true">&raquo;</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

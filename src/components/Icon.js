@@ -3,18 +3,18 @@ import "./Icon.css";
 
 function Icon() {
   return (
-    <div class="icon d-flex justify-content-end">
+    <div className="icon d-flex justify-content-end">
       <Link to={"/"}>
-        <i class="bi bi-link text-black"></i>
+        <i className="bi bi-link text-black"></i>
       </Link>
       <Link to={"/"}>
-        <i class="bi bi-facebook text-primary"></i>
+        <i className="bi bi-facebook text-primary"></i>
       </Link>
       <Link to={"/"}>
-        <i class="bi bi-twitter text-info"></i>
+        <i className="bi bi-twitter text-info"></i>
       </Link>
       <Link to={"/"}>
-        <i class="bi bi-whatsapp text-success"></i>
+        <i className="bi bi-whatsapp text-success"></i>
       </Link>
     </div>
   );

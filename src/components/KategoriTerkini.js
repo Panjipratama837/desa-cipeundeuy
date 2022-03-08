@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 function KategoriTerkini() {
   return (
     <>
-      <div class="row">
-        <div class="kategori mt-5 col-6 col-md-12">
+      <div className="row">
+        <div className="kategori mt-5 col-6 col-md-12">
           <h4>Kategori</h4>
-          <ul class="list-unstyled">
+          <ul className="list-unstyled">
             <li>
               <Link to={"/"}>Kategori 1</Link>
             </li>
@@ -22,9 +22,9 @@ function KategoriTerkini() {
           </ul>
         </div>
 
-        <div class="terkini mt-5 col-6 col-md-12">
+        <div className="terkini mt-5 col-6 col-md-12">
           <h4>Terkini</h4>
-          <ul class="list-unstyled">
+          <ul className="list-unstyled">
             <li>
               <Link to={"/"}>Terkini 1</Link>
             </li>

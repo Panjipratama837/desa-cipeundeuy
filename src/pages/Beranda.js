@@ -1,26 +1,67 @@
 import "./Artikel.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Beranda.css";
 import { Link } from "react-router-dom";
+import ReactPaginate from "react-paginate";
+import dataArtikel from "../data-artikel/artikel.json";
 
 function Beranda() {
+  const [articles] = useState(dataArtikel);
+  const [pageNumber, setPageNumber] = useState(0);
+  const [search, setSearch] = useState("");
+
   useEffect(() => {
     document.title = "Beranda";
   }, []);
+  console.log(dataArtikel);
+
+  const articlePerPage = 4;
+  const pagesVisited = pageNumber * articlePerPage;
+
+  const filterArticles = articles.filter((article) => {
+    return article.judul.toLowerCase().includes(search.toLowerCase());
+  });
+
+  const displayArticles = filterArticles
+    .slice(pagesVisited, pagesVisited + articlePerPage)
+    .map((article) => {
+      return (
+        <div className="row mt-5" key={article.id}>
+          <div className="col-md-4">
+            <picture>
+              <img
+                src={article.gambar}
+                className="img-thumbnail"
+                alt={article.judul}
+              />
+            </picture>
+          </div>
+          <div className="col-md-8">
+            <h4>{article.judul}</h4>
+            <p>{new Date(article.tanggal).toLocaleDateString()}</p>
+            <p className="text-muted">{article.summary}</p>
+            <Link to={`artikel/${article.id}`} className="btn btn-primary">
+              Read More
+            </Link>
+          </div>
+        </div>
+      );
+    });
+
+  const pageCount = Math.ceil(articles.length / articlePerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <div className="container mt-5">
-      <div class="row">
+      <div className="row">
         <main className="col-md-9">
-          <form className="form d-flex d-block d-sm-none mb-3">
-            <i className="bi bi-search"></i>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
           <div
             id="carouselExampleCaptions"
             className="carousel slide"
@@ -80,136 +121,99 @@ function Beranda() {
             </div>
           </div>
 
-          <div class="artikel mt-5">
+          <div className="artikel mt-5">
             <h3>Berita Terkini</h3>
             <hr />
-            <div class="row">
-              <div class="col-md-4">
-                <picture>
-                  <img
-                    src={require("../images/artikel-1.jpg")}
-                    className="img-thumbnail"
-                    alt="artikel-1"
-                  />
-                </picture>
-              </div>
-              <div class="col-md-8">
-                <h4>Judul Konten</h4>
-                <p>Minggu, 03 Maret 2022</p>
-                <p className="text-muted">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio
-                  ut quaerat cupiditate atque arch...
-                </p>
-                <Link to={"/"} className="btn btn-primary">
-                  Read More
-                </Link>
-              </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-md-4">
-                <picture>
-                  <img
-                    src={require("../images/artikel-2.jpg")}
-                    className="img-thumbnail"
-                    alt="artikel-2"
-                  />
-                </picture>
-              </div>
-              <div class="col-md-8">
-                <h4>Judul Konten</h4>
-                <p>Minggu, 03 Maret 2022</p>
-                <p className="text-muted">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio
-                  ut quaerat cupiditate atque arch...
-                </p>
-                <Link to={"/"} className="btn btn-primary">
-                  Read More
-                </Link>
-              </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-md-4">
-                <picture>
-                  <img
-                    src={require("../images/artikel-3.jpg")}
-                    className="img-thumbnail"
-                    alt="artikel-3"
-                  />
-                </picture>
-              </div>
-              <div class="col-md-8">
-                <h4>Judul Konten</h4>
-                <p>Minggu, 03 Maret 2022</p>
-                <p className="text-muted">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio
-                  ut quaerat cupiditate atque arch...
-                </p>
-                <Link to={"/"} className="btn btn-primary">
-                  Read More
-                </Link>
-              </div>
-            </div>
+            <form className="form d-flex">
+              <i className="bi bi-search"></i>
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Cari judul artikel ..."
+                aria-label="Search"
+                onChange={handleSearch}
+              />
+            </form>
+            {displayArticles}
           </div>
 
-          <div class="paginate mt-5">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item">
-                  <Link className="page-link" aria-label="Previous" to={"/"}>
-                    <span aria-hidden="true">&laquo;</span>
-                  </Link>
-                </li>
-                <li class="page-item">
-                  <Link className="page-link" to={"/"}>
-                    1
-                  </Link>
-                </li>
-                <li class="page-item active">
-                  <Link className="page-link" to={"/"}>
-                    2
-                  </Link>
-                </li>
-                <li class="page-item">
-                  <Link className="page-link" to={"/"}>
-                    3
-                  </Link>
-                </li>
-                <li class="page-item">
-                  <Link className="page-link" aria-label="Next" to={"/"}>
-                    <span aria-hidden="true">&raquo;</span>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <ReactPaginate
+            previousLabel="&lt;"
+            nextLabel="&gt;"
+            breakLabel="..."
+            pageCount={pageCount}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={3}
+            onPageChange={changePage}
+            containerClassName="pagination justify-content-end"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            nextClassName="page-item"
+            breakClassName="page-item"
+            previousLinkClassName="page-link"
+            nextLinkClassName="page-link"
+            breakLinkClassName="page-link"
+            activeClassName="active"
+          />
         </main>
 
         <aside className="col-md-3">
-          <form className="form d-flex d-none d-sm-block">
-            <i className="bi bi-search"></i>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-
-          <div class="peta mt-5">
+          <div className="peta">
             <h4>Peta Desa</h4>
             <hr />
-            <picture>
+            <picture data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img
                 src={require("../images/peta.jpg")}
                 className="img-thumbnail"
                 alt="peta"
               />
             </picture>
+
+            <div
+              className="modal fade "
+              id="exampleModal"
+              tabIndex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog modal-lg modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">
+                      Peta Desa
+                    </h5>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <picture>
+                      <img
+                        src={require("../images/peta.jpg")}
+                        className="img-fluid"
+                        alt="peta"
+                      />
+                    </picture>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="statistik-penduduk mt-5">
+          <div className="statistik-penduduk mt-5">
             <h4>Statistik Penduduk</h4>
             <hr />
             <picture>
@@ -221,7 +225,7 @@ function Beranda() {
             </picture>
           </div>
 
-          <div class="statistik-pengunjung mt-5">
+          <div className="statistik-pengunjung mt-5">
             <h4>Statistik Pengunjung</h4>
             <hr />
             <picture>
@@ -234,14 +238,14 @@ function Beranda() {
           </div>
         </aside>
 
-        <div class="info mt-5 pb-5 ">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card shadow">
-                <div class="card-body text-center">
-                  <h5 class="card-title mb-3">Alamat</h5>
-                  <i class="bi bi-geo-alt-fill display-6 mx-auto"></i>
-                  <p class="card-text mt-3">
+        <div className="info mt-5 pb-5 ">
+          <div className="row">
+            <div className="col-md-4">
+              <div className="card shadow">
+                <div className="card-body text-center">
+                  <h5 className="card-title mb-3">Alamat</h5>
+                  <i className="bi bi-geo-alt-fill display-6 mx-auto"></i>
+                  <p className="card-text mt-3">
                     <Link to={"/"}>
                       Kecamatan Surade, Kabupaten Sukabumi, Provinsi Jawa Barat,
                       Indonesia, 43179
@@ -251,27 +255,27 @@ function Beranda() {
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="card shadow">
-                <div class="card-body text-center">
-                  <h5 class="card-title mb-3">Kontak</h5>
-                  <i class="bi bi-telephone-fill display-6 mx-auto "></i>
-                  <p class="card-text mt-3">
+            <div className="col-md-4">
+              <div className="card shadow">
+                <div className="card-body text-center">
+                  <h5 className="card-title mb-3">Kontak</h5>
+                  <i className="bi bi-telephone-fill display-6 mx-auto "></i>
+                  <p className="card-text mt-3">
                     <Link to={"/"}>+62 822 3155 5644 (Whatsapp)</Link>
                   </p>
-                  <p class="card-text">
+                  <p className="card-text">
                     <Link to={"/"}>030 155 564 (Kantor)</Link>
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="card shadow">
-                <div class="card-body text-center">
-                  <h5 class="card-title mb-3">Email</h5>
-                  <i class="bi bi-envelope-fill display-6 mx-auto"></i>
-                  <p class="card-text mt-3">
+            <div className="col-md-4">
+              <div className="card shadow">
+                <div className="card-body text-center">
+                  <h5 className="card-title mb-3">Email</h5>
+                  <i className="bi bi-envelope-fill display-6 mx-auto"></i>
+                  <p className="card-text mt-3">
                     <a href="mailto:desa_cipeundeuy@gmail.com">
                       desa_cipeundeuy@gmail.com
                     </a>

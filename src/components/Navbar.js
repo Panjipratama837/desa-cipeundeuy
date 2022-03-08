@@ -13,13 +13,13 @@ function Navbar() {
 
   return (
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div className="container">
           <Link className="navbar-brand" to="/">
             Cipeundeuy
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -27,20 +27,16 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="collapse navbar-collapse"
-            id="navbarNav"
-            onClick={handleToggle}
-          >
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <NavLink activeClassName="active" className="nav-link" to="/">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item" onClick={handleToggle}>
+                <NavLink className="nav-link" to="/">
                   Beranda
                 </NavLink>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link
                   to={"#"}
                   className="nav-link dropdown-toggle"
@@ -51,31 +47,34 @@ function Navbar() {
                 >
                   Info Desa
                 </Link>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <NavLink className="nav-link" to="/About">
+                    <NavLink
+                      className="nav-link"
+                      to="/About"
+                      onClick={handleToggle}
+                    >
                       Sejarah Desa
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="nav-link" to="/WilayahDesa">
+                    <NavLink
+                      className="nav-link"
+                      to="/WilayahDesa"
+                      onClick={handleToggle}
+                    >
                       Wilayah Desa
                     </NavLink>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
+              <li className="nav-item" onClick={handleToggle}>
                 <NavLink className="nav-link" to="/Parawisata">
                   Info Parawisata
                 </NavLink>
               </li>
 
-              <li class="nav-item">
-                <NavLink className="nav-link" to="/Artikel">
-                  Artikel
-                </NavLink>
-              </li>
-              <li class="nav-item">
+              <li className="nav-item" onClick={handleToggle}>
                 <NavLink className="nav-link" to="/Kontak">
                   Kontak
                 </NavLink>

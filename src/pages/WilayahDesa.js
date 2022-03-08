@@ -12,15 +12,6 @@ function WilayahDesa() {
     <div className="container mt-5">
       <div class="row">
         <main className="col-md-9 pb-5">
-          <form className="form d-flex d-block d-sm-none mb-3">
-            <i className="bi bi-search"></i>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
           <h1>Wilayah Desa Cipeundeuy</h1>
           <p>Sabtu, 05 Maret 2022</p>
           <picture>
@@ -52,16 +43,6 @@ function WilayahDesa() {
         </main>
 
         <aside className="col-md-3">
-          <form className="form d-flex d-none d-sm-block">
-            <i className="bi bi-search"></i>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-
           <KategoriTerkini />
         </aside>
       </div>

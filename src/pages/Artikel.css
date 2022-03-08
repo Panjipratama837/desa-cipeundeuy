@@ -13,3 +13,12 @@
 .form-control {
   text-indent: 33px;
 }
+
+@media screen and (min-width: 992px) {
+  .img-fluid {
+    width: 100% !important;
+    height: 450px !important;
+    object-fit: cover;
+    object-position: center;
+  }
+}

@@ -14,12 +14,8 @@ import {
   LineIcon,
   EmailShareButton,
   EmailIcon,
-  PinterestShareButton,
-  PinterestIcon,
   RedditShareButton,
   RedditIcon,
-  VKShareButton,
-  VKIcon,
 } from "react-share";
 
 function Icon() {
@@ -50,17 +46,9 @@ function Icon() {
               </h5>
             </div>
             <div className="modal-body d-flex justify-content-center">
-              <VKShareButton url={currentUrl} className="icon-item">
-                <VKIcon size={45} round />
-              </VKShareButton>
-
               <RedditShareButton url={currentUrl} className="icon-item">
                 <RedditIcon size={45} round />
               </RedditShareButton>
-
-              <PinterestShareButton url={currentUrl} className="icon-item">
-                <PinterestIcon size={45} round />
-              </PinterestShareButton>
 
               <EmailShareButton url={currentUrl} className="icon-item">
                 <EmailIcon size={45} round />

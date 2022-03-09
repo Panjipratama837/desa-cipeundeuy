@@ -59,7 +59,7 @@ function Beranda() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container top-container ">
       <div className="row">
         <main className="col-md-9">
           <div
@@ -162,17 +162,17 @@ function Beranda() {
           <div className="peta">
             <h4>Peta Desa</h4>
             <hr />
-            <picture data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <picture data-bs-toggle="modal" data-bs-target="#desa">
               <img
                 src={require("../images/peta.jpg")}
-                className="img-thumbnail"
+                className="img-thumbnail img-modal"
                 alt="peta"
               />
             </picture>
 
             <div
               className="modal fade "
-              id="exampleModal"
+              id="desa"
               tabIndex="-1"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
@@ -216,29 +216,113 @@ function Beranda() {
           <div className="statistik-penduduk mt-5">
             <h4>Statistik Penduduk</h4>
             <hr />
-            <picture>
+            <picture data-bs-toggle="modal" data-bs-target="#penduduk">
               <img
                 src={require("../images/statistik-penduduk.jpg")}
-                className="img-thumbnail"
-                alt="Statistik Penduduk"
+                className="img-thumbnail img-modal"
+                alt="peta"
               />
             </picture>
+
+            <div
+              className="modal fade "
+              id="penduduk"
+              tabIndex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog modal-lg modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">
+                      Statistik Penduduk
+                    </h5>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <picture>
+                      <img
+                        src={require("../images/statistik-penduduk.jpg")}
+                        className="img-fluid"
+                        alt="statistik-penduduk"
+                      />
+                    </picture>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="statistik-pengunjung mt-5">
             <h4>Statistik Pengunjung</h4>
             <hr />
-            <picture>
+            <picture data-bs-toggle="modal" data-bs-target="#pengunjung">
               <img
                 src={require("../images/statistik-pengunjung.jpg")}
-                className="img-thumbnail"
+                className="img-thumbnail img-modal"
                 alt="peta"
               />
             </picture>
+
+            <div
+              className="modal fade "
+              id="pengunjung"
+              tabIndex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog modal-lg modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">
+                      Statistik Pengunjung
+                    </h5>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <picture>
+                      <img
+                        src={require("../images/statistik-pengunjung.jpg")}
+                        className="img-fluid"
+                        alt="peta"
+                      />
+                    </picture>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </aside>
 
-        <div className="info mt-5 pb-5 ">
+        <div className="info mt-5 pb-5 " id="kontak">
           <div className="row">
             <div className="col-md-4">
               <div className="card shadow">
@@ -246,10 +330,14 @@ function Beranda() {
                   <h5 className="card-title mb-3">Alamat</h5>
                   <i className="bi bi-geo-alt-fill display-6 mx-auto"></i>
                   <p className="card-text mt-3">
-                    <Link to={"/"}>
+                    <a
+                      href="https://goo.gl/maps/z5FHEFRWNasS3NZM9"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Kecamatan Surade, Kabupaten Sukabumi, Provinsi Jawa Barat,
                       Indonesia, 43179
-                    </Link>
+                    </a>
                   </p>
                 </div>
               </div>
@@ -261,7 +349,13 @@ function Beranda() {
                   <h5 className="card-title mb-3">Kontak</h5>
                   <i className="bi bi-telephone-fill display-6 mx-auto "></i>
                   <p className="card-text mt-3">
-                    <Link to={"/"}>+62 822 3155 5644 (Whatsapp)</Link>
+                    <a
+                      href="https://wa.me/6282231555644"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      +62 822 3155 5644 (Whatsapp)
+                    </a>
                   </p>
                   <p className="card-text">
                     <Link to={"/"}>030 155 564 (Kantor)</Link>

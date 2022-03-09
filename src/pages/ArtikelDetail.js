@@ -17,7 +17,7 @@ function ArtikelDetail() {
   console.log(params.id);
 
   return (
-    <div className="container mt-5">
+    <div className="container top-container">
       <div className="row">
         <main className="col-md-9 pb-5">
           <h1>{article[params.id - 1].judul}</h1>

@@ -1,7 +1,11 @@
 .icon {
-  font-size: 2rem;
+  font-size: 2.7rem;
 }
 
-i {
-  margin-right: 2rem;
+.icon-item {
+  margin-right: 1rem;
+}
+
+.bi-link {
+  cursor: pointer;
 }

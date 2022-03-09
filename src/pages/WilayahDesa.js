@@ -9,7 +9,7 @@ function WilayahDesa() {
   }, []);
 
   return (
-    <div className="container mt-5">
+    <div className="container top-container">
       <div class="row">
         <main className="col-md-9 pb-5">
           <h1>Wilayah Desa Cipeundeuy</h1>

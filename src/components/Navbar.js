@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { HashLink } from "react-router-hash-link";
 
 function Navbar() {
   const handleToggle = () => {
@@ -13,7 +14,7 @@ function Navbar() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to="/">
             Cipeundeuy
@@ -75,9 +76,9 @@ function Navbar() {
               </li>
 
               <li className="nav-item" onClick={handleToggle}>
-                <NavLink className="nav-link" to="/Kontak">
+                <HashLink to="/#kontak" className="nav-link">
                   Kontak
-                </NavLink>
+                </HashLink>
               </li>
             </ul>
           </div>

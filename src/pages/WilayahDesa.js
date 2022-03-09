@@ -10,7 +10,7 @@ function WilayahDesa() {
 
   return (
     <div className="container top-container">
-      <div class="row">
+      <div className="row">
         <main className="col-md-9 pb-5">
           <h1>Wilayah Desa Cipeundeuy</h1>
           <p>Sabtu, 05 Maret 2022</p>

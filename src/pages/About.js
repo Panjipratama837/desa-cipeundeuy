@@ -165,7 +165,7 @@ function About() {
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Kepala Desa</th>
+                <th scope="col">Kepala Desa</th>
                 <th scope="col">Keterangan</th>
               </tr>
             </thead>

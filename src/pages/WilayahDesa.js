@@ -13,7 +13,7 @@ function WilayahDesa() {
       <div className="row">
         <main className="col-md-9 pb-5">
           <h1>Wilayah Desa Cipeundeuy</h1>
-          <p>Sabtu, 05 Maret 2022</p>
+          <p>{new Date("14 Maret 2022").toLocaleDateString()}</p>
           <picture>
             <img
               className="img-fluid"
@@ -22,23 +22,89 @@ function WilayahDesa() {
             />
           </picture>
 
-          <article className="mt-2">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
-              officiis, nostrum recusandae neque quaerat autem ratione excepturi
-              mollitia vel, optio accusantium. Magni similique, quidem rem,
-              nulla doloremque assumenda, neque vel blanditiis cupiditate
-              debitis hic. Eligendi, molestias odit animi reiciendis
-              exercitationem laudantium! Perspiciatis, sed! Voluptas ab amet
-              hic, quaerat tenetur ipsum ratione unde mollitia eveniet! Dolore,
-              distinctio? Voluptatum iste minus dolore enim illum! Reprehenderit
-              molestiae eos facilis ab, dolorum quidem commodi sit at. Rem,
-              similique optio. Officiis libero omnis quia, quod, in repudiandae
-              asperiores sunt eaque ullam, sapiente nesciunt quisquam
-              consequuntur! Ducimus adipisci porro repellendus perspiciatis
-              distinctio amet modi molestias hic!
-            </p>
-          </article>
+          <div class="row">
+            <div class="col-md-6">
+              <table class="table table-borderless mt-3">
+                <tr>
+                  <th>Nama Desa</th>
+                  <td>Desa Cipeundeuy Kecamatan Surade</td>
+                </tr>
+                <tr>
+                  <th>Kepala Desa</th>
+                  <td>Bakang Anwar As’adi</td>
+                </tr>
+                <tr>
+                  <th>Luas Wilayah</th>
+                  <td>1286 Ha</td>
+                </tr>
+              </table>
+              <hr />
+              <p className="text-center">
+                <b>Batas Wilayah</b>
+              </p>
+              <table class="table table-borderless mt-3">
+                <tr>
+                  <th>Sebelah Utara</th>
+                  <td>Desa Gunungsungging</td>
+                </tr>
+                <tr>
+                  <th>Sebelah Selatan</th>
+                  <td>Samudera Indonesia</td>
+                </tr>
+                <tr>
+                  <th>Sebelah Barat</th>
+                  <td>Desa Buniwangi</td>
+                </tr>
+                <tr>
+                  <th>Sebelah Timur</th>
+                  <td>Desa Sukatani</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="col-md-6">
+              <table class="table table-borderless mt-3">
+                <tr>
+                  <th>Jumlah Rumah Penduduk</th>
+                  <td>1.230 Rumah</td>
+                </tr>
+                <tr>
+                  <th>Jumlah Penduduk</th>
+                  <td>4.613 Orang</td>
+                </tr>
+                <tr>
+                  <th>Jumlah RT/RW</th>
+                  <td>21 RT / 6 RW</td>
+                </tr>
+                <tr>
+                  <th>Kantor Pemerintah Desa</th>
+                  <td>1 Buah</td>
+                </tr>
+                <tr>
+                  <th>Luas Tanah</th>
+                  <td>2500 M</td>
+                </tr>
+                <tr>
+                  <th>Luas Bangunan</th>
+                  <td>180 M</td>
+                </tr>
+                <tr>
+                  <th>Tahun Dibuat</th>
+                  <td>1984</td>
+                </tr>
+                <tr>
+                  <th>Jumlah Dusun</th>
+                  <td>
+                    <ul>
+                      <li>Dusun Leuwicagak</li>
+                      <li>Dusun Cipeundeuy</li>
+                      <li>Dusun Cimandala</li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
           <Icon />
         </main>
 

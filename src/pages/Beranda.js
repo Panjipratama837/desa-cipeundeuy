@@ -177,7 +177,7 @@ function Beranda() {
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
             >
-              <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div className="modal-content">
                   <div className="modal-header">
                     <h5 className="modal-title" id="exampleModalLabel">
@@ -192,11 +192,7 @@ function Beranda() {
                   </div>
                   <div className="modal-body">
                     <picture>
-                      <img
-                        src={require("../images/peta.jpg")}
-                        className="img-fluid"
-                        alt="peta"
-                      />
+                      <img src={require("../images/peta.jpg")} alt="peta" />
                     </picture>
                   </div>
                   <div className="modal-footer">

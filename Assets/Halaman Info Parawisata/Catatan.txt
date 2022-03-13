@@ -1,0 +1,10 @@
+Yang dibutuhkan dihalaman Info Parawisata:
+
+
+Nama Parawisata (Teks)
+Tanggal (Teks)
+Foto
+isi content (Menjelaskan lokasi parawisata tersebut) (Teks)
+
+
+Rename foto sesuai nama tempat parawisata

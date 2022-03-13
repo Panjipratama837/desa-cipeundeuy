@@ -27,7 +27,7 @@ function Icon() {
   };
 
   return (
-    <div className="icon d-flex justify-content-end">
+    <div className="icon d-flex justify-content-end mt-5">
       <CopyToClipboard text={currentUrl} onCopy={handleCopy}>
         {copied ? (
           <i className="bi bi-check2 icon-item"></i>

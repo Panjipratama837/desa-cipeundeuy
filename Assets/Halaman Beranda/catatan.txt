@@ -1,0 +1,27 @@
+Yang dibutuhkan untuk Halaman Beranda
+
+Folder Slider
+___________________________________________
+3 Foto
+___________________________________________
+
+
+
+Folder Berita Terkini
+___________________________________________
+Judul berita/artikel (Teks)
+tangal (Teks)
+Foto
+isi berita / artikel tersebut (Teks)
+
+Rename foto sesuai judul berita / artikel
+___________________________________________
+
+
+
+
+Folder Statistik Penduduk & Statistik Pengunjung & Peta Desa
+__________________________________________
+
+Foto
+__________________________________________
